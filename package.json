@@ -1,0 +1,11 @@
+{
+  "name": "@01ht/ht-footer",
+  "version": "1.0.0",
+  "main": "ht-footer.js",
+  "repository": "01ht/ht-footer",
+  "author": "01HT Ltd",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@polymer/lit-element": "^0.6.1"
+  }
+}
