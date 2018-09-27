@@ -142,7 +142,7 @@ class HTFooter extends LitElement {
                       link.isMail
                         ? html`<a href=${link.href}>${link.title}</a>`
                         : html`<a href=${link.href} target=${
-                            link.blank ? "_blank" : "_self"
+                            link.blank ? "_blank" : ""
                           } rel="noopener">${link.title}</a>`
                     }
                     </div>
@@ -152,7 +152,9 @@ class HTFooter extends LitElement {
             )}
             <div id="company-section" class="section">
                   <div id="company-block">
-                    <a href="https://01.ht" target="_blank">
+                    <a href=${
+                      data.companySite ? "/" : "https://01.ht"
+                    } target=${data.companySite ? "" : "_blank"}>
                         <div>
                             <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1530624792/logos/01ht/logo.svg" alt="01HT">
                             <div id="name">01HT</div>
@@ -160,20 +162,20 @@ class HTFooter extends LitElement {
                     </a>
                   </div>
                   <div><a href=${
-                    data.companySite ? "/" : "https://01.ht"
+                    data.companySite ? "/about" : "https://01.ht/about"
                   } target=${
-      data.companySite ? "_self" : "_blank"
+      data.companySite ? "" : "_blank"
     }>О компании</a></div>
                   <div><a href=${
                     data.companySite ? "/products" : "https://01.ht/products"
                   } target=${
-      data.companySite ? "_self" : "_blank"
+      data.companySite ? "" : "_blank"
     }>Продукты</a></div>
                   <div><a href="https://blog.01.ht" target="_blank" rel="noopener">Блог</a></div>
                   <div><a href=${
                     data.companySite ? "/contact" : "https://01.ht/contact"
                   } target=${
-      data.companySite ? "_self" : "_blank"
+      data.companySite ? "" : "_blank"
     }>Контакты</a></div>
                 </div>
             </div>
@@ -183,17 +185,17 @@ class HTFooter extends LitElement {
                 <div><a href=${
                   data.companySite ? "/" : "https://01.ht"
                 } target=${
-      data.companySite ? "_self" : "_blank"
+      data.companySite ? "" : "_blank"
     }>© 2018 01HT Ltd.</a></div>
                 <div><a href=${
                   data.companySite ? "/privacy" : "https://01.ht/privacy"
                 } target=${
-      data.companySite ? "_self" : "_blank"
+      data.companySite ? "" : "_blank"
     }>Политика конфиденциальности</a></div>
                 <div><a href=${
                   data.companySite ? "/terms" : "https://01.ht/terms"
                 } target=${
-      data.companySite ? "_self" : "_blank"
+      data.companySite ? "" : "_blank"
     }>Условия использования</a></div>
             </div>
         </div>
