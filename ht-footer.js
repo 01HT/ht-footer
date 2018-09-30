@@ -186,7 +186,7 @@ class HTFooter extends LitElement {
                   data.companySite ? "/" : "https://01.ht"
                 } target=${
       data.companySite ? "" : "_blank"
-    }>© 2018 01HT Ltd.</a></div>
+    }>© 2018 01HT LLC</a></div>
                 <div><a href=${
                   data.companySite ? "/privacy" : "https://01.ht/privacy"
                 } target=${
