@@ -3,7 +3,7 @@ import { repeat } from "lit-html/directives/repeat.js";
 
 class HTFooter extends LitElement {
   render() {
-    const { data } = this;
+    const { data, showPayments } = this;
     return html`
     <style>
         :host {
@@ -86,17 +86,55 @@ class HTFooter extends LitElement {
             color:#fff;
         }
 
-        #bottom > div {
+        #bottom #footer-wrapper {
             max-width: 1280px;
             margin:auto;
-            display:flex;
             padding: 8px 0;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
         }
 
-        #bottom > div > div {
+        #bottom #footer-wrapper #copyright {
+            display:flex;
+        }
+
+        #bottom #footer-wrapper #copyright > div {
             padding: 8px 32px;
         }
 
+        #bottom #payments {
+            display:flex;
+            align-items:center;
+            padding: 8px 32px;
+        }
+
+        #bottom #payments img {
+            height: 16px;
+            width: auto;
+            padding: 0 8px;
+        }
+
+        #bottom #payments #mastercard, #bottom #payments #alfabank {
+            height: 24px;
+        }
+
+        [hidden] {
+            display:none !important;
+        }
+
+        @media (max-width: 1030px) {
+            #bottom #footer-wrapper {
+                flex-wrap:wrap;
+                width:100%;
+                justify-content: center;
+            }
+
+            #bottom #footer-wrapper > div {
+                display: flex;
+            }
+        }
+        
         @media (max-width: 930px) {
             #wrapper {
                 grid-template-columns: 0.5fr 0.5fr;
@@ -105,7 +143,6 @@ class HTFooter extends LitElement {
             #company-block {
                 margin:auto;
                 margin-bottom: 8px;
-
             }
 
             .section {
@@ -113,20 +150,24 @@ class HTFooter extends LitElement {
             }
         }
 
-        @media (max-width: 500px) {
-            #wrapper {
-                grid-template-columns: 1fr;
+        @media (max-width: 800px) {
+            #bottom #footer-wrapper > div {
+                display: flex;
             }
-        }
 
-        @media (max-width: 780px) {
-            #bottom > div {
+            #copyright {
                 flex-wrap:wrap;
             }
 
-            #bottom > div > div{
-                width:100%;
-                text-align: center;
+            #copyright > div {
+                width: 100%;
+                text-align:center;
+            }
+        }
+
+        @media (max-width: 500px) {
+            #wrapper {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -185,22 +226,30 @@ class HTFooter extends LitElement {
             </div>
         </div>
         <div id="bottom">
-            <div>
-                <div><a href=${
-                  data.companySite ? "/" : "https://01.ht"
-                } target=${
+            <div id="footer-wrapper">
+                <div id="copyright">
+                    <div><a href=${
+                      data.companySite ? "/" : "https://01.ht"
+                    } target=${
       data.companySite ? "" : "_blank"
     }>© 2018 01HT LLC</a></div>
-                <div><a href=${
-                  data.companySite ? "/privacy" : "https://01.ht/privacy"
-                } target=${
+                    <div><a href=${
+                      data.companySite ? "/privacy" : "https://01.ht/privacy"
+                    } target=${
       data.companySite ? "" : "_blank"
     }>Политика конфиденциальности</a></div>
-                <div><a href=${
-                  data.companySite ? "/terms" : "https://01.ht/terms"
-                } target=${
+                    <div><a href=${
+                      data.companySite ? "/terms" : "https://01.ht/terms"
+                    } target=${
       data.companySite ? "" : "_blank"
     }>Условия использования</a></div>
+                </div>
+                <div id="payments" ?hidden=${!showPayments}>
+                    <!-- <img id="alfabank" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539019058/logos/alfabank/logo.svg" alt="Alfa bank"> -->
+                    <img id="visa" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017157/logos/visa/visa.svg" alt="Visa">
+                    <img id="mastercard" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017383/logos/mastercard/mastercard.svg" alt="MasterCard">
+                    <img id="mir" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017203/logos/mir/mir.svg" alt="Mir">
+                </div>
             </div>
         </div>
     </div>
@@ -209,7 +258,8 @@ class HTFooter extends LitElement {
 
   static get properties() {
     return {
-      items: { data: Object }
+      data: { type: Object },
+      showPayments: { type: Boolean }
     };
   }
 }
