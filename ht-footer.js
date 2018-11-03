@@ -201,7 +201,7 @@ class HTFooter extends LitElement {
                       data.companySite ? "/" : "https://01.ht"
                     } target=${data.companySite ? "" : "_blank"}>
                         <div>
-                            <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1530624792/logos/01ht/logo.svg" alt="01HT">
+                            <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1530624792/logos/01ht/logo.svg" alt="01HT LLC logo">
                             <div id="name">01HT</div>
                         </div>
                     </a>
@@ -210,18 +210,18 @@ class HTFooter extends LitElement {
                     data.companySite ? "/about" : "https://01.ht/about"
                   } target=${
       data.companySite ? "" : "_blank"
-    }>О компании</a></div>
+    } rel="noopener">О компании</a></div>
                   <div><a href=${
                     data.companySite ? "/products" : "https://01.ht/products"
                   } target=${
       data.companySite ? "" : "_blank"
-    }>Продукты</a></div>
+    } rel="noopener">Продукты</a></div>
                   <div><a href="https://blog.01.ht" target="_blank" rel="noopener">Блог</a></div>
                   <div><a href=${
                     data.companySite ? "/contact" : "https://01.ht/contact"
                   } target=${
       data.companySite ? "" : "_blank"
-    }>Контакты</a></div>
+    } rel="noopener">Контакты</a></div>
                 </div>
             </div>
         </div>
@@ -232,23 +232,23 @@ class HTFooter extends LitElement {
                       data.companySite ? "/" : "https://01.ht"
                     } target=${
       data.companySite ? "" : "_blank"
-    }>© 2018 01HT LLC</a></div>
+    } rel="noopener">© 2018 01HT LLC</a></div>
                     <div><a href=${
                       data.companySite ? "/privacy" : "https://01.ht/privacy"
                     } target=${
       data.companySite ? "" : "_blank"
-    }>Политика конфиденциальности</a></div>
+    } rel="noopener">Политика конфиденциальности</a></div>
                     <div><a href=${
                       data.companySite ? "/terms" : "https://01.ht/terms"
                     } target=${
       data.companySite ? "" : "_blank"
-    }>Условия использования</a></div>
+    } rel="noopener">Условия использования</a></div>
                 </div>
                 <div id="payments" ?hidden=${!showPayments}>
                     <!-- <img id="alfabank" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539019058/logos/alfabank/logo.svg" alt="Alfa bank"> -->
-                    <img id="visa" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017157/logos/visa/visa.svg" alt="Visa">
-                    <img id="mastercard" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017383/logos/mastercard/mastercard.svg" alt="MasterCard">
-                    <img id="mir" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017203/logos/mir/mir.svg" alt="Mir">
+                    <img id="visa" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017157/logos/visa/visa.svg" alt="Visa icon">
+                    <img id="mastercard" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017383/logos/mastercard/mastercard.svg" alt="MasterCard icon">
+                    <img id="mir" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017203/logos/mir/mir.svg" alt="Mir icon">
                 </div>
             </div>
         </div>
