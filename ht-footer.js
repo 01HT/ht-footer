@@ -199,7 +199,7 @@ class HTFooter extends LitElement {
                   <div id="company-block">
                     <a href=${
                       data.companySite ? "/" : "https://01.ht"
-                    } target=${data.companySite ? "" : "_blank"}>
+                    } target=${data.companySite ? "" : "_blank"} rel="noopener">
                         <div>
                             <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1530624792/logos/01ht/logo.svg" alt="01HT LLC logo">
                             <div id="name">01HT</div>
