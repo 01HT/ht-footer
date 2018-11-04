@@ -30,13 +30,13 @@ class HTFooter extends LitElement {
         }
 
         #wrapper {
-            display:grid;
-            grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+            display:flex;
             max-width: 1280px;
             margin:auto;
         }
 
         .section {
+            width: 25%;
             background: #303c42;
             display: flex;
             flex-direction: column;
@@ -137,12 +137,20 @@ class HTFooter extends LitElement {
         
         @media (max-width: 930px) {
             #wrapper {
-                grid-template-columns: 0.5fr 0.5fr;
+                flex-wrap: wrap;
+            }
+
+            .section {
+                width: calc(50% - 64px);
             }
 
             #company-block {
-                margin:auto;
+                display:flex;
                 margin-bottom: 8px;
+            }
+
+            #company-block a {
+                margin:auto;
             }
 
             .section {
@@ -166,8 +174,8 @@ class HTFooter extends LitElement {
         }
 
         @media (max-width: 500px) {
-            #wrapper {
-                grid-template-columns: 1fr;
+            .section {
+                width: 100%;
             }
         }
     </style>
