@@ -104,34 +104,51 @@ class HTFooter extends LitElement {
         }
 
         #bottom #payments {
-            display:flex;
+            display: inline-flex;
+            flex-direction: row-reverse;
             align-items:center;
-            padding: 8px 32px;
+            margin: 5px 32px;
         }
 
         #bottom #payments img {
-            height: 16px;
+            height: 24px;
             width: auto;
-            padding: 0 8px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            padding: 0;
+            margin-left: -8px;
+            transition: all .2s!important;
         }
 
-        #bottom #payments #mastercard, #bottom #payments #alfabank {
-            height: 24px;
+        #bottom #payments:hover img {
+            margin-left: 2px;
+        }
+
+        #bottom #payments img:last-child {
+            margin-left: 0;
+        }
+
+        #bottom #payments:hover img:last-child {
+            margin-left: 0;
         }
 
         [hidden] {
             display:none !important;
         }
 
-        @media (max-width: 1030px) {
+        @media (max-width: 1200px) {
             #bottom #footer-wrapper {
-                flex-wrap:wrap;
-                width:100%;
+                flex-direction: column;
                 justify-content: center;
             }
 
             #bottom #footer-wrapper > div {
                 display: flex;
+            }
+
+            #bottom #payments {
+                margin: 8px 0;
+                justify-content: center;
             }
         }
         
@@ -176,6 +193,16 @@ class HTFooter extends LitElement {
         @media (max-width: 500px) {
             .section {
                 width: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #bottom #payments:hover img {
+                margin-left: -8px;
+            }
+
+            #bottom #payments:hover img:last-child {
+                margin-left: 0;
             }
         }
     </style>
@@ -252,12 +279,19 @@ class HTFooter extends LitElement {
       data.companySite ? "" : "_blank"
     } rel="noopener">Условия использования</a></div>
                 </div>
-                <div id="payments" ?hidden=${!showPayments}>
-                    <!-- <img id="alfabank" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539019058/logos/alfabank/logo.svg" alt="Alfa bank"> -->
-                    <img id="visa" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017157/logos/visa/visa.svg" alt="Visa icon">
-                    <img id="mastercard" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017383/logos/mastercard/mastercard.svg" alt="MasterCard icon">
-                    <img id="mir" src="https://res.cloudinary.com/cdn-01ht/image/upload/v1539017203/logos/mir/mir.svg" alt="Mir icon">
-                </div>
+                <a id="payments" href="/payment-methods" ?hidden=${!showPayments}>
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108360/apps/elements/pages/payment-methods/webmoney-logo.svg" alt="WebMoney">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547109434/apps/elements/pages/payment-methods/qiwi-logo.svg" alt="QIWI Кошелёк">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547109344/apps/elements/pages/payment-methods/yandex-money-logo.svg" alt="Яндекс.Деньги">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108279/apps/elements/pages/payment-methods/sberbank-logo.svg" alt="Сбербанк Онлайн">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/american-express-logo.svg" alt="American Express">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/diners-club-logo.svg" alt="Diners Club">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/jcb-logo.svg" alt="JCB">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/mir-logo.svg" alt="Мир">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108279/apps/elements/pages/payment-methods/maestro-logo.svg" alt="Maestro">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/master-card-logo.svg" alt="Mastercard">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108279/apps/elements/pages/payment-methods/visa-logo.svg" alt="Visa">
+                </a>
             </div>
         </div>
     </div>
