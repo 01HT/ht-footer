@@ -1,11 +1,8 @@
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html, css } from "lit-element";
 import { repeat } from "lit-html/directives/repeat.js";
 
 class HTFooter extends LitElement {
-  render() {
-    const { data, showPayments } = this;
-    return html`
-    <style>
+  static styles = css`<style>
         :host {
             display: block;
             box-sizing: border-box;
@@ -205,7 +202,11 @@ class HTFooter extends LitElement {
                 margin-left: 0;
             }
         }
-    </style>
+    </style>`;
+
+  render() {
+    const { data, showPayments } = this;
+    return html`
     <div id="container">
         <div id="wrapper">
             ${repeat(
@@ -220,10 +221,10 @@ class HTFooter extends LitElement {
                     <div>
                     ${
                       link.isMail
-                        ? html`<a href=${link.href}>${link.title}</a>`
-                        : html`<a href=${link.href} target=${
+                        ? html`<a href="${link.href}">${link.title}</a>`
+                        : html`<a href="${link.href}" target="${
                             link.blank ? "_blank" : ""
-                          } rel="noopener">${link.title}</a>`
+                          }" rel="noopener">${link.title}</a>`
                     }
                     </div>
                 </div>`
@@ -232,54 +233,56 @@ class HTFooter extends LitElement {
             )}
             <div id="company-section" class="section">
                   <div id="company-block">
-                    <a href=${
+                    <a href="${
                       data.companySite ? "/" : "https://01.ht"
-                    } target=${data.companySite ? "" : "_blank"} rel="noopener">
+                    }" target="${
+      data.companySite ? "" : "_blank"
+    }" rel="noopener">
                         <div>
-                            <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1530624792/logos/01ht/logo.svg" alt="01HT LLC logo">
+                            <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1549575496/logos/01ht/logo.svg" alt="01HT LLC logo">
                             <div id="name">01HT</div>
                         </div>
                     </a>
                   </div>
-                  <div><a href=${
+                  <div><a href="${
                     data.companySite ? "/about" : "https://01.ht/about"
-                  } target=${
+                  }" target="${
       data.companySite ? "" : "_blank"
-    } rel="noopener">О компании</a></div>
-                  <div><a href=${
+    }" rel="noopener">О компании</a></div>
+                  <div><a href="${
                     data.companySite ? "/products" : "https://01.ht/products"
-                  } target=${
+                  }" target="${
       data.companySite ? "" : "_blank"
-    } rel="noopener">Продукты</a></div>
+    }" rel="noopener">Продукты</a></div>
                   <div><a href="https://blog.01.ht" target="_blank" rel="noopener">Блог</a></div>
-                  <div><a href=${
+                  <div><a href="${
                     data.companySite ? "/contact" : "https://01.ht/contact"
-                  } target=${
+                  }" target="${
       data.companySite ? "" : "_blank"
-    } rel="noopener">Контакты</a></div>
+    }" rel="noopener">Контакты</a></div>
                 </div>
             </div>
         </div>
         <div id="bottom">
             <div id="footer-wrapper">
                 <div id="copyright">
-                    <div><a href=${
+                    <div><a href="${
                       data.companySite ? "/" : "https://01.ht"
-                    } target=${
+                    }" target="${
       data.companySite ? "" : "_blank"
-    } rel="noopener">© 2018 01HT LLC</a></div>
-                    <div><a href=${
+    }" rel="noopener">© 2018 01HT LLC</a></div>
+                    <div><a href="${
                       data.companySite ? "/privacy" : "https://01.ht/privacy"
-                    } target=${
+                    }" target="${
       data.companySite ? "" : "_blank"
-    } rel="noopener">Политика конфиденциальности</a></div>
-                    <div><a href=${
+    }" rel="noopener">Политика конфиденциальности</a></div>
+                    <div><a href="${
                       data.companySite ? "/terms" : "https://01.ht/terms"
-                    } target=${
+                    }" target="${
       data.companySite ? "" : "_blank"
-    } rel="noopener">Условия использования</a></div>
+    }" rel="noopener">Условия использования</a></div>
                 </div>
-                <a id="payments" href="/payment-methods" ?hidden=${!showPayments}>
+                <a id="payments" href="/payment-methods" ?hidden="${!showPayments}">
                     <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108360/apps/elements/pages/payment-methods/webmoney-logo.svg" alt="WebMoney">
                     <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547109434/apps/elements/pages/payment-methods/qiwi-logo.svg" alt="QIWI Кошелёк">
                     <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547109344/apps/elements/pages/payment-methods/yandex-money-logo.svg" alt="Яндекс.Деньги">
