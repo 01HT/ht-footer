@@ -2,207 +2,208 @@ import { LitElement, html, css } from "lit-element";
 import { repeat } from "lit-html/directives/repeat.js";
 
 class HTFooter extends LitElement {
-  static styles = css`<style>
-        :host {
-            display: block;
-            box-sizing: border-box;
-            position: relative;
-            font-size: 16px;
-        }
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        font-size: 16px;
+      }
 
-        a {
-            font-size: inherit;
-            color: #cfd8dc;
-            text-decoration:none;
+      a {
+        font-size: inherit;
+        color: #cfd8dc;
+        text-decoration: none;
+      }
 
-        }
+      a:hover {
+        color: #fff;
+        text-decoration: none;
+      }
 
-        a:hover {
-            color:#fff;
-            text-decoration: none;
-        }
+      #container {
+        background: linear-gradient(90deg, #303c42 50%, #37424b 50%);
+      }
 
-        #container {
-            background:linear-gradient(90deg,#303c42 50%,#37424b 50%);
-        }
+      #wrapper {
+        display: flex;
+        max-width: 1280px;
+        margin: auto;
+      }
 
-        #wrapper {
-            display:flex;
-            max-width: 1280px;
-            margin:auto;
-        }
+      .section {
+        width: 25%;
+        background: #303c42;
+        display: flex;
+        flex-direction: column;
+        padding: 32px 32px 48px 32px;
+      }
 
-        .section {
-            width: 25%;
-            background: #303c42;
-            display: flex;
-            flex-direction: column;
-            padding: 32px 32px 48px 32px;
-        }
+      .section > * {
+        padding: 4px 0;
+      }
 
-        .section > * {
-            padding: 4px 0;
-        }
+      .footer-title {
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
 
-        .footer-title {
-            color:#fff;
-            font-weight:500;
-            margin-bottom: 8px;
-        }
+      #company-section {
+        background: #37424b;
+      }
 
-        #company-section {
-            background:#37424b;
-        }
+      #company-block {
+        margin-bottom: 16px;
+      }
 
-        #company-block {
-            margin-bottom: 16px;
-        }
+      #company-block a {
+        display: block;
+        float: left;
+      }
 
-        #company-block a {
-            display:block;
-            float:left;
-        }
+      #company-block a > div {
+        display: flex;
+        align-items: center;
+      }
 
-        #company-block a > div {
-            display:flex;
-            align-items: center;
-        }
+      #company-block img {
+        width: 32px;
+      }
 
-        #company-block img {
-            width: 32px;
-        }
+      #company-block #name {
+        font-weight: 400;
+        font-size: 18px;
+        margin-left: 8px;
+      }
 
-        #company-block #name {
-            font-weight: 400;
-            font-size: 18px;
-            margin-left: 8px;
-        }
+      #bottom {
+        background: #455a64;
+        color: #fff;
+      }
 
-        #bottom {
-            background: #455a64;
-            color:#fff;
-        }
+      #bottom #footer-wrapper {
+        max-width: 1280px;
+        margin: auto;
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
+      #bottom #footer-wrapper #copyright {
+        display: flex;
+      }
+
+      #bottom #footer-wrapper #copyright > div {
+        padding: 8px 32px;
+      }
+
+      #bottom #payments {
+        display: inline-flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        margin: 5px 32px;
+      }
+
+      #bottom #payments img {
+        height: 24px;
+        width: auto;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        padding: 0;
+        margin-left: -8px;
+        transition: all 0.2s !important;
+      }
+
+      #bottom #payments:hover img {
+        margin-left: 2px;
+      }
+
+      #bottom #payments img:last-child {
+        margin-left: 0;
+      }
+
+      #bottom #payments:hover img:last-child {
+        margin-left: 0;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 1200px) {
         #bottom #footer-wrapper {
-            max-width: 1280px;
-            margin:auto;
-            padding: 8px 0;
-            display:flex;
-            align-items:center;
-            justify-content:space-between;
+          flex-direction: column;
+          justify-content: center;
         }
 
-        #bottom #footer-wrapper #copyright {
-            display:flex;
-        }
-
-        #bottom #footer-wrapper #copyright > div {
-            padding: 8px 32px;
+        #bottom #footer-wrapper > div {
+          display: flex;
         }
 
         #bottom #payments {
-            display: inline-flex;
-            flex-direction: row-reverse;
-            align-items:center;
-            margin: 5px 32px;
+          margin: 8px 0;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 930px) {
+        #wrapper {
+          flex-wrap: wrap;
         }
 
-        #bottom #payments img {
-            height: 24px;
-            width: auto;
-            border-radius: 50%;
-            border: 1px solid #fff;
-            padding: 0;
-            margin-left: -8px;
-            transition: all .2s!important;
+        .section {
+          width: calc(50% - 64px);
         }
 
+        #company-block {
+          display: flex;
+          margin-bottom: 8px;
+        }
+
+        #company-block a {
+          margin: auto;
+        }
+
+        .section {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 800px) {
+        #bottom #footer-wrapper > div {
+          display: flex;
+        }
+
+        #copyright {
+          flex-wrap: wrap;
+        }
+
+        #copyright > div {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .section {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 400px) {
         #bottom #payments:hover img {
-            margin-left: 2px;
-        }
-
-        #bottom #payments img:last-child {
-            margin-left: 0;
+          margin-left: -8px;
         }
 
         #bottom #payments:hover img:last-child {
-            margin-left: 0;
+          margin-left: 0;
         }
-
-        [hidden] {
-            display:none !important;
-        }
-
-        @media (max-width: 1200px) {
-            #bottom #footer-wrapper {
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            #bottom #footer-wrapper > div {
-                display: flex;
-            }
-
-            #bottom #payments {
-                margin: 8px 0;
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 930px) {
-            #wrapper {
-                flex-wrap: wrap;
-            }
-
-            .section {
-                width: calc(50% - 64px);
-            }
-
-            #company-block {
-                display:flex;
-                margin-bottom: 8px;
-            }
-
-            #company-block a {
-                margin:auto;
-            }
-
-            .section {
-                text-align:center;
-            }
-        }
-
-        @media (max-width: 800px) {
-            #bottom #footer-wrapper > div {
-                display: flex;
-            }
-
-            #copyright {
-                flex-wrap:wrap;
-            }
-
-            #copyright > div {
-                width: 100%;
-                text-align:center;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .section {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 400px) {
-            #bottom #payments:hover img {
-                margin-left: -8px;
-            }
-
-            #bottom #payments:hover img:last-child {
-                margin-left: 0;
-            }
-        }
-    </style>`;
+      }
+    `;
+  }
 
   render() {
     const { data, showPayments } = this;
