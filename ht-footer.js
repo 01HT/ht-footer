@@ -15,6 +15,7 @@ class HTFooter extends LitElement {
         font-size: inherit;
         color: #cfd8dc;
         text-decoration: none;
+        outline: none;
       }
 
       a:hover {
