@@ -272,7 +272,7 @@ class HTFooter extends LitElement {
                       data.companySite ? "/" : "https://01.ht"
                     }" target="${
       data.companySite ? "" : "_blank"
-    }" rel="noopener">© 2018 01HT LLC</a></div>
+    }" rel="noopener">© 2019 01HT LLC</a></div>
                     <div><a href="${
                       data.companySite ? "/privacy" : "https://01.ht/privacy"
                     }" target="${
@@ -288,6 +288,7 @@ class HTFooter extends LitElement {
                     <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108360/apps/elements/pages/payment-methods/webmoney-logo.svg" alt="WebMoney">
                     <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547109434/apps/elements/pages/payment-methods/qiwi-logo.svg" alt="QIWI Кошелёк">
                     <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547109344/apps/elements/pages/payment-methods/yandex-money-logo.svg" alt="Яндекс.Деньги">
+                    <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1550392392/apps/elements/pages/payment-methods/tinkoff-logo.svg" alt="Интернет-банк Тинькофф">
                     <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108279/apps/elements/pages/payment-methods/sberbank-logo.svg" alt="Сбербанк Онлайн">
                     <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/american-express-logo.svg" alt="American Express">
                     <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/diners-club-logo.svg" alt="Diners Club">
