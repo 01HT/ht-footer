@@ -245,7 +245,9 @@ class HTFooter extends LitElement {
       data.companySite ? "" : "_blank"
     }" rel="noopener">
                         <div>
-                            <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1549575496/logos/01ht/logo.svg" alt="01HT LLC logo">
+                            <img src="${
+                              window.appConfig.cloudinary.url
+                            }/image/upload/v1549575496/logos/01ht/logo.svg" alt="01HT LLC logo">
                             <div id="name">01HT</div>
                         </div>
                     </a>
@@ -291,29 +293,53 @@ class HTFooter extends LitElement {
                 ${
                   showPayments
                     ? html`<a id="payments" href="/payment-methods">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108360/apps/elements/pages/payment-methods/webmoney-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547108360/apps/elements/pages/payment-methods/webmoney-logo.svg"
                   alt="WebMoney">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547109434/apps/elements/pages/payment-methods/qiwi-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547109434/apps/elements/pages/payment-methods/qiwi-logo.svg"
                   alt="QIWI Кошелёк">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547109344/apps/elements/pages/payment-methods/yandex-money-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547109344/apps/elements/pages/payment-methods/yandex-money-logo.svg"
                   alt="Яндекс.Деньги">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1550392392/apps/elements/pages/payment-methods/tinkoff-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1550392392/apps/elements/pages/payment-methods/tinkoff-logo.svg"
                   alt="Интернет-банк Тинькофф">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108279/apps/elements/pages/payment-methods/sberbank-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547108279/apps/elements/pages/payment-methods/sberbank-logo.svg"
                   alt="Сбербанк Онлайн">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/american-express-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547108281/apps/elements/pages/payment-methods/american-express-logo.svg"
                   alt="American Express">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/diners-club-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547108281/apps/elements/pages/payment-methods/diners-club-logo.svg"
                   alt="Diners Club">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/jcb-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547108281/apps/elements/pages/payment-methods/jcb-logo.svg"
                   alt="JCB">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/mir-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547108281/apps/elements/pages/payment-methods/mir-logo.svg"
                   alt="Мир">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108279/apps/elements/pages/payment-methods/maestro-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547108279/apps/elements/pages/payment-methods/maestro-logo.svg"
                   alt="Maestro">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108281/apps/elements/pages/payment-methods/master-card-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547108281/apps/elements/pages/payment-methods/master-card-logo.svg"
                   alt="Mastercard">
-                <img src="https://res.cloudinary.com/cdn-01ht/image/upload/v1547108279/apps/elements/pages/payment-methods/visa-logo.svg"
+                <img src="${
+                  window.appConfig.cloudinary.url
+                }/image/upload/v1547108279/apps/elements/pages/payment-methods/visa-logo.svg"
                   alt="Visa"> </a>`
                     : null
                 }
